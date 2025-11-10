@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hakkımızda - Çe&Fi Tekstil</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* About sayfasına özel küçük ek stiller (style.css ile uyumlu) */
+    .about-hero {
+      background: url("../images/about-hero.jpg") center/cover no-repeat;
+      position: relative;
+      height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+    .about-hero .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 30px;
+    }
+    .about-hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 8px;
+      color: #00b4d8;
+    }
+    .about-hero p.lead {
+      color: #ddd;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .about-main {
+      padding: 60px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .history {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .story {
+      background: #111;
+      padding: 28px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(255,255,255,0.03);
+      color: #ddd;
+      line-height: 1.7;
+    }
+
+    .story h2 {
+      color: #00b4d8;
+      margin-bottom: 12px;
+    }
+
+    .team-card {
+      background: #222;
+      padding: 18px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .team-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      object-fit: cover;
+      height: 220px;
+    }
+    .team-card h3 { color: #fff; margin-bottom: 6px; }
+    .team-card p { color: #ccc; font-size: 0.95rem; }
+
+    .values {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .value-item {
+      background: #111;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1 1 30%;
+      min-width: 220px;
+      box-shadow: 0 8px 25px rgba(255,255,255,0.02);
+      transition: transform 0.25s;
+    }
+    .value-item:hover { transform: translateY(-6px); }
+    .value-item h4 { color: #00b4d8; margin-bottom:8px; }
+    .value-item p { color: #ccc; font-size: 0.98rem; }
+
+    /* Timeline */
+    .timeline-wrap {
+      margin-top: 50px;
+    }
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #111;
+      padding: 14px 18px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(255,255,255,0.02);
+    }
+    .timeline-item .year {
+      min-width: 80px;
+      font-weight: 700;
+      color: #00b4d8;
+      font-size: 1.1rem;
+    }
+    .timeline-item .desc { color: #ccc; line-height:1.5; }
+
+    /* CTA */
+    .about-cta {
+      margin-top: 50px;
+      background: linear-gradient(90deg, rgba(0,180,216,0.08), rgba(0,180,216,0.02));
+      border: 1px solid rgba(0,180,216,0.06);
+      padding: 26px;
+      border-radius: 14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .about-cta .cta-left h3 { color: #fff; margin-bottom:8px; }
+    .about-cta .cta-left p { color:#ccc; max-width:760px; }
+    .about-cta .cta-right { display:flex; gap:12px; align-items:center; }
+
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .history { grid-template-columns: 1fr; }
+      .team-card img { height: 200px; }
+      .value-item { flex: 1 1 45%; }
+      .about-cta { flex-direction:column; align-items:flex-start; }
+    }
+    @media (max-width: 576px) {
+      .value-item { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html"><img src="images/logo.png" class="logo" alt="Çe&Fi Tekstil Logo"></a>
+    <div class="nav-links">
+      <a href="index.html">Anasayfa</a>
+      <a href="about.html" class="active">Hakkımızda</a>
+      <a href="services.html">Ürünler</a>
+      <a href="contact.html">İletişim</a>
+    </div>
+  </nav>
+
+  <!-- HERO (küçük, bilgi amaçlı) -->
+  <header class="about-hero" role="banner" aria-label="Hakkımızda başlığı">
+    <div class="container">
+      <h1>Çe&Fi Tekstil — Köklü Tecrübe, Modern Vizyon</h1>
+      <p class="lead">Aile sıcaklığı ile çalışan, kalite ve güveni yaşam prensibi haline getirmiş bir tekstil atölyesi. Kuruluş hikâyemizden günümüze uzanan yolculuğumuzu keşfedin.</p>
+    </div>
+  </header>
+
+  <!-- ANA İÇERİK -->
+  <main class="about-main" role="main">
+
+    <!-- Hikâye + Team -->
+    <section class="history" aria-labelledby="biz-kimiz">
+      <div class="story" id="biz-kimiz">
+        <h2>Biz Kimiz?</h2>
+
+        <p><strong>Çetin Ticaret</strong> ve <strong>Fidan Ticaret</strong>, 2009 yılının Eylül ayında <strong>Çetin Kızılkaya</strong> ve <strong>Mehmet Oturmak</strong>’ın ortaklığıyla kuruldu. İlk yıllarda Mehmet Bey iç giyime, Çetin Bey ise çocuk ve bebek giyimine odaklandı; o dönemde Diyarbakır Sur, Vakıflar İşhanı’nda iki ayrı dükkânda hizmet verilerek bölgedeki güven ve kalite temeli atıldı.</p>
+
+        <p>Zamanla artan talep ve güçlenen tedarik ilişkileri neticesinde, 2022 yılında iki yapı tek bir çatı altında birleşerek marka adı <strong>Çe&Fi Tekstil</strong> oldu. Bu birleşme ile uzmanlıklar bir araya getirildi, tedarik zinciri güçlendi ve ürün çeşitliliği genişletildi.</p>
+
+        <p>2024 Ocak ayında ise Çe&Fi Tekstil; Diyarbakır Kantar Toptancılar Sitesi karşısı, Yıldız Office’e taşındı. Burada üç dükkân yan yana açılarak çeyiz bölümü de kuruldu; artık iç giyimden çocuk/bebek ürünlerine, çeyiz setlerine kadar geniş bir yelpaze aynı çatı altında sunuluyor.</p>
+
+        <p>Bugün Çe&Fi Tekstil, "kalite, güven ve memnuniyet" ilkelerini merkezine alarak faaliyet göstermeye devam ediyor. Gelenekten aldığı güvenle, yenilikçi tasarım anlayışını harmanlayıp sektörde fark yaratmayı hedefliyoruz.</p>
+
+        <div class="values" aria-hidden="false" role="list">
+          <div class="value-item" role="listitem">
+            <h4>KALİTE</h4>
+            <p>Ürünlerimiz titiz kalite süreçlerinden geçer; malzeme seçimi, dikiş ve paketleme standartlarımız yüksek kalite garantisi verir.</p>
+          </div>
+          <div class="value-item" role="listitem">
+            <h4>MÜŞTERİ ODAKLI</h4>
+            <p>Sadece satmak değil, müşteriyle uzun vadeli güven inşa etmek önceliğimiz. Her geri dönüş bizim için iyileşme fırsatıdır.</p>
+          </div>
+          <div class="value-item" role="listitem">
+            <h4>GÜVEN</h4>
+            <p>Açık iletişim, şeffaf fiyatlandırma ve zamanında teslimatla müşterilerimize güven veriyoruz.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="team-card" aria-labelledby="bizim-ekip">
+        <img src="images/team.jpg" alt="Çe&Fi Tekstil - Ekip ve Mağaza">
+        <h3 id="bizim-ekip">Mağaza & Ekip</h3>
+        <p>Çetin Kızılkaya ve Mehmet Oturmak öncülüğünde büyüyen küçük ama deneyimli bir ekip. Yerel bilgi ve sektörel tecrübeyle müşteriye dokunan hizmet.</p>
+      </aside>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-wrap" aria-labelledby="timeline-baslik">
+      <h2 id="timeline-baslik" style="text-align:center; color:#00b4d8; margin-bottom:18px;">Dönüm Noktalarımız</h2>
+      <div class="timeline-list">
+        <div class="timeline-item">
+          <div class="year">2009</div>
+          <div class="desc"><strong>KURULUŞ</strong> — Çetin Ticaret ve Fidan Ticaret kuruldu; ilk mağazalar Diyarbakır Sur, Vakıflar İşhanı'nda açıldı.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">2015</div>
+          <div class="desc">Bölgesel büyüme, tedarik ağının genişlemesi ve müşteri portföyünün çeşitlenmesi sağlandı.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">2022</div>
+          <div class="desc"><strong>BİRLEŞME</strong> — Çetin Ticaret ve Fidan Ticaret, Çe&Fi Tekstil adı altında birleşerek uzmanlıklarını tek çatı altında topladı.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">2024</div>
+          <div class="desc"><strong>YENİ MAĞAZA</strong> — Diyarbakır Kantar civarındaki Yıldız Office'e taşınıldı; üç yan yana mağaza ile çeyiz bölümü eklendi.</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="year">Gelecek</div>
+          <div class="desc">Sürdürülebilir üretim, online genişleme ve yurtiçi-yurtdışı pazarlarda büyüme hedeflenmektedir.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta" aria-label="İletişim çağrısı">
+      <div class="cta-left">
+        <h3>Mağazamızı ziyaret edin veya bize ulaşın</h3>
+        <p>Adres: Kantar Kavşağı Gıda, Yıldız Office Altı, Çe&Fi Tekstil — Amid Cd. karşısı, 21000 Kayapınar/Diyarbakır. Telefon: <a href="tel:+905324121389">0532 412 13 89</a></p>
+      </div>
+      <div class="cta-right">
+        <a class="btn" href="contact.html">İletişime Geç</a>
+        <a class="btn" href="services.html">Ürünlere Göz At</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Çe&Fi Tekstil. Tüm hakları saklıdır.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
