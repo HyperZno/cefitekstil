@@ -1,0 +1,314 @@
+/* ========================================
+   GENEL AYARLAR
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+ul { list-style: none; }
+button { cursor: pointer; font-family: 'Poppins', sans-serif; }
+
+/* ========================================
+   NAVBAR
+======================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+.navbar .logo { height: 50px; }
+.nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.nav-links a.active,
+.nav-links a:hover { background-color: #333; }
+
+/* ========================================
+   HERO BÖLÜMÜ
+======================================== */
+.hero {
+    background: url("../images/hero.jpg") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    color: #fff;
+    padding-left: 5%;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+}
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    padding: 50px 25px;
+    animation: fadeInUp 1.5s ease forwards;
+}
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    color: #ccc;
+}
+.btn {
+    display: inline-block;
+    background-color: #444;
+    color: #fff;
+    padding: 12px 25px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+.btn:hover {
+    background-color: #666;
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   ANİMASYONLAR
+======================================== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ========================================
+   HAKKIMIZDA
+======================================== */
+.about-section {
+    padding: 60px 5%;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+}
+.about-section p {
+    max-width: 900px;
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px 0;
+}
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #00b4d8;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.timeline-item {
+    padding: 20px 30px;
+    position: relative;
+    background-color: #222;
+    border-radius: 15px;
+    width: 45%;
+    margin: 20px 0;
+    color: #fff;
+}
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 55%; }
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #00b4d8;
+    top: 20px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-item.left::after { right: -10px; }
+.timeline-item.right::after { left: -10px; }
+
+/* ========================================
+   ÜRÜN / SERVİS KARTLARI
+======================================== */
+.services {
+    text-align: center;
+    padding: 60px 5%;
+    background-color: #111;
+}
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 30px;
+}
+.service-card {
+    background: #222;
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    aspect-ratio: 1 / 1;
+}
+.service-card img {
+    border-radius: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.service-card h3 {
+    margin: 15px 0;
+    font-size: 1.3rem;
+    color: #fff;
+}
+.service-card p {
+    color: #ccc;
+    margin-bottom: 15px;
+}
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(255,255,255,0.1);
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media(max-width: 1200px){
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-text p { font-size: 1.1rem; }
+}
+@media(max-width: 992px){
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text p { font-size: 1rem; }
+    .service-grid { grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); }
+    .timeline-item { width: 100%; left: 0 !important; margin: 20px 0; }
+}
+@media(max-width: 768px){
+    .hero { height: 60vh; justify-content: center; text-align: center; padding-left: 0; }
+    .hero-text { max-width: 90%; padding: 20px; }
+    .service-grid { grid-template-columns: 1fr; }
+    .navbar { flex-direction: column; gap: 10px; }
+}
+@media(max-width:576px){
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 0.95rem; }
+    .btn { padding: 10px 20px; font-size: 0.95rem; }
+    .nav-links { flex-direction: column; gap: 8px; }
+}
+
+/* ========================================
+   BUTONLAR VE HOVER
+======================================== */
+button, .btn { font-family: 'Poppins', sans-serif; font-size: 1rem; }
+.btn { box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+.btn:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+
+/* ========================================
+   TİPOGRAFİ
+======================================== */
+h1,h2,h3,h4,h5,h6 { font-weight:600; }
+p { font-weight:400; line-height:1.6; color:#ccc; }
+
+/* ========================================
+   BORDER VE KENAR ÇİZGİLERİ
+======================================== */
+hr { border:0; border-top:1px solid #333; margin:20px 0; }
+
+/* ========================================
+   MODAL / POP-UP
+======================================== */
+.modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; }
+.modal-content { background:#111; color:#fff; padding:30px; border-radius:20px; max-width:500px; width:90%; text-align:center; position:relative; box-shadow:0 15px 40px rgba(255,255,255,0.2); }
+.modal-content h2 { margin-top:0; font-size:2rem; }
+.modal-content p { color:#ccc; margin:15px 0; }
+.close-btn { position:absolute; top:12px; right:18px; font-size:28px; cursor:pointer; color:#fff; }
+
+/* ========================================
+   FORM / İLETİŞİM
+======================================== */
+.contact-section { padding:60px 5%; background-color:#111; text-align:center; }
+.contact-section h2 { font-size:2.2rem; color:#fff; margin-bottom:40px; }
+.contact-container { display:flex; flex-wrap:wrap; justify-content:center; gap:50px; }
+.contact-form-wrapper, .contact-info-wrapper { flex:1; min-width:320px; }
+.contact-form { background:#222; padding:30px; border-radius:20px; box-shadow:0 10px 35px rgba(255,255,255,0.1); display:flex; flex-direction:column; gap:15px; }
+.contact-form input, .contact-form textarea, .contact-form select { padding:12px 15px; border-radius:10px; border:1px solid #555; background-color:#111; color:#fff; }
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { outline:none; border-color:#888; box-shadow:0 0 8px rgba(255,255,255,0.2); }
+.contact-form button { background-color:#444; color:#fff; }
+.contact-form button:hover { background-color:#666; }
+
+/* ========================================
+   MAP CONTAINER
+======================================== */
+.map-container { margin-top:20px; border-radius:15px; overflow:hidden; }
+
+/* ========================================
+   DETAYLI HOVER EFLEKTLER
+======================================== */
+.service-card:hover img { transform: scale(1.05); transition: transform 0.3s ease; }
+.hero-text .btn:hover { transform: translateY(-3px) scale(1.05); }
+
+/* ========================================
+   SON DOKUNUŞLAR / DEBUGS
+======================================== */
+*,*:before,*:after { box-sizing:border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
