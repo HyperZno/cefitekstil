@@ -1,0 +1,140 @@
+// ========================================
+// NAVBAR AKTİF LINK
+// ========================================
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function setActiveLink() {
+    let scrollPos = window.scrollY || window.pageYOffset;
+
+    navLinks.forEach(link => {
+        let section = document.querySelector(link.getAttribute('href'));
+        if (section) {
+            if (
+                scrollPos >= section.offsetTop - 50 &&
+                scrollPos < section.offsetTop + section.offsetHeight
+            ) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveLink);
+window.addEventListener('load', setActiveLink);
+
+// ========================================
+// MODAL OPEN / CLOSE
+// ========================================
+const modal = document.querySelector('.modal');
+const openModalBtns = document.querySelectorAll('.open-modal');
+const closeModalBtn = document.querySelector('.close-btn');
+
+openModalBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+window.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// ========================================
+// HERO BUTTON ANIMATION
+// ========================================
+const heroBtn = document.querySelector('.hero-text .btn');
+if (heroBtn) {
+    heroBtn.addEventListener('mouseenter', () => {
+        heroBtn.style.transform = 'translateY(-3px) scale(1.05)';
+    });
+    heroBtn.addEventListener('mouseleave', () => {
+        heroBtn.style.transform = 'translateY(0) scale(1)';
+    });
+}
+
+// ========================================
+// SERVICE CARD HOVER EFFECTS
+// ========================================
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        const img = card.querySelector('img');
+        img.style.transform = 'scale(1.05)';
+    });
+    card.addEventListener('mouseleave', () => {
+        const img = card.querySelector('img');
+        img.style.transform = 'scale(1)';
+    });
+});
+
+// ========================================
+// CONTACT / RANDEVU FORM SUBMIT
+// ========================================
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const formData = new FormData(contactForm);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        // Örnek: console log ile test
+        console.log('Randevu formu gönderildi:', data);
+
+        // Opsiyonel: Fetch API ile backend mail gönderimi
+        /*
+        fetch('/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(response => {
+            alert('Randevunuz başarıyla gönderildi!');
+            contactForm.reset();
+        })
+        .catch(err => console.error(err));
+        */
+
+        // Modal aç
+        if (modal) {
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Formu sıfırla
+        contactForm.reset();
+    });
+}
+
+// ========================================
+// SMOOTH SCROLL (NAVBAR)
+ // ========================================
+navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 50,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
