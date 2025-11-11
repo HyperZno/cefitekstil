@@ -1,0 +1,184 @@
+/* =======================================
+   GENEL SIFIRLAMA VE FONT
+======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #f0f0f0;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 80%);
+}
+
+/* =======================================
+   ARKA PLAN ANİMASYONU
+======================================= */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100% 50px;
+    animation: scan-lines 100s linear infinite;
+}
+@keyframes scan-lines {
+    to { background-position: 0 5000px; }
+}
+
+/* =======================================
+   KONTEYNER
+======================================= */
+.container {
+    padding: 30px;
+    max-width: 700px;
+    z-index: 2;
+    text-align: left;
+}
+
+/* =======================================
+   SYSTEM OFFLINE BAŞLIK
+======================================= */
+.status-code {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    color: #444;
+    text-shadow:
+        0 0 5px rgba(255,165,0,0.1),
+        0 0 10px rgba(255,165,0,0.1);
+    animation: dim-flicker 15s infinite alternate ease-in-out;
+}
+@keyframes dim-flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.95; }
+}
+
+/* =======================================
+   ANA MESAJ
+======================================= */
+.main-message {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    color: #aaaaaa;
+}
+
+/* =======================================
+   AÇIKLAMA METNİ
+======================================= */
+.description {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #777777;
+    margin-bottom: 40px;
+}
+
+/* =======================================
+   BİLGİ KUTUSU
+======================================= */
+.info-box {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ffaa00;
+    background-color: #1a1a1a;
+    border-radius: 3px;
+    animation: pulse 2s infinite ease-in-out;
+}
+.info-label {
+    color: #ffaa00;
+    font-weight: 700;
+    margin-right: 10px;
+}
+.info-time {
+    color: #f0f0f0;
+    font-weight: 400;
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,170,0,0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255,170,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,170,0,0); }
+}
+
+/* =======================================
+   KUTU BUTONLARI
+======================================= */
+.btn-group {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-group .btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f0f0f0;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: all 0.35s ease;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/* Hover efekti – kutu kenarları ve yazı rengi değişir */
+.btn-group .btn:hover {
+    color: #00b4d8;
+    border-color: #00b4d8;
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+    transform: translateY(-4px);
+}
+
+/* Hover’da ışık geçiş animasyonu efekti */
+.btn-group .btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(0,180,216,0.3), transparent);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+.btn-group .btn:hover::before {
+    left: 125%;
+    opacity: 1;
+}
+
+/* =======================================
+   DUYARLI TASARIM
+======================================= */
+@media (max-width: 600px) {
+    .container {
+        text-align: center;
+    }
+    .status-code {
+        font-size: 3rem;
+    }
+    .main-message {
+        font-size: 1.2rem;
+    }
+    .btn-group {
+        justify-content: center;
+    }
+}
