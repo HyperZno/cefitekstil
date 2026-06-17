@@ -1,0 +1,56 @@
+.bulk-order-form {
+    margin-top: 40px;
+    background: var(--bg-secondary);
+    padding: 40px;
+    border: var(--border-neon);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.admin-panel {
+    padding: 40px;
+    background: white;
+    border-top: 4px solid var(--accent-red);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Animations for admin tab */
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms;
+}

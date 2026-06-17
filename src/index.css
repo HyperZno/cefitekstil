@@ -1,0 +1,11 @@
+@import './styles/luxury.css';
+
+/* Fix for smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base styles refinement */
+.app-container {
+    min-height: 100vh;
+}

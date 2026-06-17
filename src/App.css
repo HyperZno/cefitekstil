@@ -1,0 +1,76 @@
+/* V3 App.css - Luxury Refinement */
+
+.app-container {
+    overflow-x: hidden;
+}
+
+/* Page Transitions */
+.animate-in {
+    animation: luxFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes luxFade {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Category Bento Grid Responsive */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .item-1,
+    .item-2 {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .lux-nav {
+        width: 95%;
+        padding: 0 20px;
+    }
+
+    .lux-nav-links {
+        display: none;
+        /* Mobile menu can be added if needed, but for 'luxury minimalist' we might keep it simple */
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item-1,
+    .item-2,
+    .item-3,
+    .item-4 {
+        grid-column: span 1;
+        height: 350px;
+    }
+}
+
+/* Image Hover Gloss */
+.bento-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: 0.8s;
+}
+
+.bento-item:hover::after {
+    left: 150%;
+}
